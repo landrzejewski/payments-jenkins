@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label "build-in"
+        label "built-in"
     }
     tools {
         jdk "jdk17"
