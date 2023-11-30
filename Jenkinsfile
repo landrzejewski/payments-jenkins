@@ -7,14 +7,16 @@ pipeline {
         maven "current"
     }
     stages {
-        stage("Build") {
-            steps {
-                bat "mvn clean compile"
+        parallel {
+            stage("Build") {
+                steps {
+                    bat "mvn clean compile package"
+                }
             }
-        }
-        stage("Test") {
-            steps {
-                bat "mvn test"
+            stage("Test") {
+                steps {
+                    bat "mvn test"
+                }
             }
         }
     }
