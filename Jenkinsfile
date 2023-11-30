@@ -1,9 +1,12 @@
 pipeline {
     agent none
+    tools {
+        jdk "jdk17"
+    }
     stages {
         stage("Build") {
             steps {
-                echo "Hello"
+                sh "java -version"
             }
         }
     }
