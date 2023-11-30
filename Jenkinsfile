@@ -17,5 +17,10 @@ pipeline {
                 bat "mvn test"
             }
         }
+        stage("Dockerize") {
+            steps {
+               bat "docker build -t payments ."
+            }
+        }
     }
 }
